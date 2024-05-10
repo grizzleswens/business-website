@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 mail = Mail(app)
 
-EMAIL = 'garrettcodetesting@gmail.com'
+EMAIL = 'slcmemoryvault@gmail.com'
 PASSWORD = os.environ.get('EMAIL_PASSWORD')
 receiver = "swensongarrett@gmail.com"
 print(PASSWORD)
