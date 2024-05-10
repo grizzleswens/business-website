@@ -17,7 +17,7 @@ def send_contact_form(name, email, number, message):
     try:
         email_message = f'Name {name} \nEmail {email} \nNumber {number} \nMessage {message}'
         print(email_message)
-        with smtplib.SMTP("smtp.gmail.com") as connection:
+        with smtplib.SMTP("smtp.gmail.com", 587) as connection:
             connection.starttls()
             connection.login(EMAIL, PASSWORD)
             connection.sendmail(EMAIL, receiver, email_message)
