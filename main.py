@@ -12,6 +12,7 @@ PASSWORD = os.environ.get('EMAIL_PASSWORD')
 receiver = "swensongarrett@gmail.com"
 print(PASSWORD)
 
+
 def send_contact_form(name, email, number, message):
     try:
         email_message = f'Name {name} \nEmail {email} \nNumber {number} \nMessage {message}'
@@ -25,8 +26,6 @@ def send_contact_form(name, email, number, message):
         print(f"An error occurred: {str(e)}")
 
 
-
-
 @app.route('/')
 def home():
     return render_template("index.html")
@@ -37,9 +36,9 @@ def send_email():
     if request.method == 'POST':
         data = request.form
         name = data["name"]
-        email=data['email']
-        phone=data['phone']
-        message=data['message']
+        email = data['email']
+        phone = data['phone']
+        message = data['message']
         print(name, email, phone, message)
         send_contact_form(name, email, phone, message)
         return render_template("index.html")
@@ -47,4 +46,3 @@ def send_email():
 
 if __name__ == "__main__":
     app.run(debug=False)
-
